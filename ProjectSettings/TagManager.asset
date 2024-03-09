@@ -47,6 +47,12 @@ TagManager:
   - name: Collisions
     uniqueID: 3967529373
     locked: 0
+  - name: BelowPlayer
+    uniqueID: 4031640583
+    locked: 0
   - name: Player
     uniqueID: 3894060289
+    locked: 0
+  - name: AbovePlayer
+    uniqueID: 2968927549
     locked: 0
