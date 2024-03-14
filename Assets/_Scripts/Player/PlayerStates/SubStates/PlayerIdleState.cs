@@ -1,4 +1,5 @@
 using UnityEngine;
+using CoreSystem;
 
 public class PlayerIdleState : PlayerNormalState
 {

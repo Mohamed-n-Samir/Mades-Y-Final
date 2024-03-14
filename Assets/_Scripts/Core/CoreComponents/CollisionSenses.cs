@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace CoreSystem
+{
 public class CollisionSenses : CoreComponent
 {
     private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
@@ -24,4 +26,5 @@ public class CollisionSenses : CoreComponent
         // get => Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, whatIsGround);
     }
 
+}
 }

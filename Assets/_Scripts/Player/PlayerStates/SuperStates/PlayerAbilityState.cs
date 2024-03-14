@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using CoreSystem;
 
 public class PlayerAbilityState : PlayerState
 {
     public bool IsAbilityDone { get; set; }
 
-    protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+    protected CoreSystem.Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
     private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
 
-    private Movement movement;
+    private CoreSystem.Movement movement;
     private CollisionSenses collisionSenses;
     protected Vector2 playerLastDirection;
 

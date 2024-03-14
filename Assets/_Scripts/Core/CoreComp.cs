@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace CoreSystem
+{
 public class CoreComp<T> where T : CoreComponent
 {
     private Core core;
@@ -16,4 +18,5 @@ public class CoreComp<T> where T : CoreComponent
 
         this.core = core;
     }
+}
 }

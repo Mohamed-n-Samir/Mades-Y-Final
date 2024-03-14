@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Grap",
+                    "name": "Interact",
                     "type": "Button",
                     "id": "9efd810c-51cb-4464-ac54-f30477c142fa",
                     "expectedControlType": "Button",
@@ -185,11 +185,11 @@
                 {
                     "name": "",
                     "id": "e9ccac57-96e7-4313-b40f-7918fd9dbc21",
-                    "path": "<Keyboard>/g",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Grap",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

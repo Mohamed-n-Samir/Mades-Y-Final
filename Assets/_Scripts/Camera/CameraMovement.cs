@@ -20,7 +20,7 @@ using UnityEngine;
 //     }
 // }
 
-public class NewBehaviourScript : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
     [SerializeField] private Transform target;
 

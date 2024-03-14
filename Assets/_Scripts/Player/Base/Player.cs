@@ -1,4 +1,6 @@
 using UnityEngine;
+using CoreSystem;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -8,7 +10,7 @@ public class Player : MonoBehaviour
     public PlayerIdleState IdleState { get; private set; }
     public PlayerRunState RunState { get; private set; }
     public PlayerDashState DashState { get; private set; }
-    // public PlayerAttackState PrimaryAttackState { get; private set; }
+    public PlayerPrimaryAttackState PlayerPrimaryAttackState { get; private set; }
     // public PlayerAttackState SecondaryAttackState { get; private set; }
 
     [SerializeField]
@@ -28,7 +30,7 @@ public class Player : MonoBehaviour
 
     #region Other Variables         
 
-    // private Weapon primaryWeapon;
+    private Weapon primaryWeapon;
     // private Weapon secondaryWeapon;
     
     #endregion
@@ -36,13 +38,11 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
-        Core = GetComponentInChildren<Core>();
 
-        // primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
-        // secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();
-        
-        // primaryWeapon.SetCore(Core);
-        // secondaryWeapon.SetCore(Core);
+        primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
+        Core = GetComponentInChildren<Core>();
+        primaryWeapon.SetPlayer(this);
+        primaryWeapon.SetCore(Core);
 
         // Stats = Core.GetCoreComponent<Stats>();
         
@@ -51,13 +51,14 @@ public class Player : MonoBehaviour
         IdleState = new PlayerIdleState(this, StateMachine, playerData);
         RunState =  new PlayerRunState(this, StateMachine,playerData);
         DashState = new PlayerDashState(this, StateMachine,playerData);
-        // PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", primaryWeapon, CombatInputs.primary);
+        PlayerPrimaryAttackState = new PlayerPrimaryAttackState(this, StateMachine, playerData,"Attack", primaryWeapon);
         // SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", secondaryWeapon, CombatInputs.secondary);
     }
 
     private void Start()
     {
         PlayerAnimator = GetComponent<Animator>();
+
         InputHandler = GetComponent<InputManager>();
         PlayerRB = GetComponent<Rigidbody2D>();
         MovementCollider = GetComponent<BoxCollider2D>();

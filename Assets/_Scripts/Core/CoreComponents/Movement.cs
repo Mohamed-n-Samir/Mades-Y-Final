@@ -1,5 +1,7 @@
 using UnityEngine;
 
+namespace CoreSystem
+{
 public class Movement : CoreComponent
 {
     public Rigidbody2D RB { get; private set; }
@@ -49,4 +51,5 @@ public class Movement : CoreComponent
     #endregion
 
 
+}
 }

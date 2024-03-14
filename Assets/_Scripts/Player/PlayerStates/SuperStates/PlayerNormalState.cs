@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using CoreSystem;
+
 
 public class PlayerNormalState : PlayerState
 {
@@ -14,16 +13,16 @@ public class PlayerNormalState : PlayerState
 
     #endregion
 
-    
 
-    // private bool primaryAttackInput;
-    // private bool secondaryAttackInput;
-    protected Movement Movement
+
+    private bool primaryAttackInput;
+    private bool secondaryAttackInput;
+    protected CoreSystem.Movement Movement
     {
         get => movement ?? core.GetCoreComponent(ref movement);
     }
 
-    private Movement movement;
+    private CoreSystem.Movement movement;
 
 
     private CollisionSenses CollisionSenses
@@ -68,17 +67,18 @@ public class PlayerNormalState : PlayerState
 
 
         dashInput = player.InputHandler.IsDashing;
-        Debug.Log(dashInput);
-        // primaryAttackInput = player.InputHandler.AttackInputs[(int)CombatInputs.primary];
-        // secondaryAttackInput = player.InputHandler.AttackInputs[(int)CombatInputs.secondary];
+        primaryAttackInput = player.InputHandler.AttackInputs[(int)InputManager.CombatInputs.primary];
+        secondaryAttackInput = player.InputHandler.AttackInputs[(int)InputManager.CombatInputs.secondary];
 
-        // if (primaryAttackInput)
-        // {
-        //     playerStateMachine.ChangeState(player.PrimaryAttackState);
-        // }
+
+        if (primaryAttackInput)
+        {
+            
+            playerStateMachine.ChangeState(player.PlayerPrimaryAttackState);
+        }
         // else if (secondaryAttackInput)
         // {
-        //     playerStateMachine.ChangeState(player.SecondaryAttackState);
+        //     playerStateMachine.ChangeState(player.PlayerSecondrayAttackState);
         // }
         if (dashInput && player.InputHandler.Movement != Vector2.zero)
         {

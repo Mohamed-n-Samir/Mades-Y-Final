@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDashState : PlayerAbilityState
@@ -44,7 +42,6 @@ public class PlayerDashState : PlayerAbilityState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        Debug.Log(DashDirection * DashSpeed);
         Movement.SetVelocity(DashDirection * DashSpeed);
 
     }
