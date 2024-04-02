@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0eb8b1d4780b73e4e86c267b4dffde23, type: 3}
+  m_Name: SpriteResolverTest
+  m_EditorClassIdentifier: 
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: b312dff0b61a61b40b4c13930902e52a, type: 2}
+  <NumberOfAttacks>k__BackingField: 2
+  <ComponentData>k__BackingField:
+  - rid: 2907648995593551876
+  - rid: 1477135172513038336
+  references:
+    version: 2
+    RefIds:
+    - rid: 1477135172513038336
+      type: {class: WeaponSpriteLibraryData, ns: , asm: Assembly-CSharp}
+      data:
+        name: WeaponSpriteLibraryData
+        attackData:
+        - name: Attack 1
+          <SpriteLibraryAsset>k__BackingField: {fileID: 7108339969198208228, guid: 7c5be71160ad7d74d96f63ccabb9165c, type: 3}
+          <Animations>k__BackingField: {fileID: 7400000, guid: 99acf0708f8f9f04db7bb2424d4ddf2d, type: 2}
+        - name: Attack 1
+          <SpriteLibraryAsset>k__BackingField: {fileID: 7108339969198208228, guid: 42e4d10f4cc82a046a2497de3eb15b9b, type: 3}
+          <Animations>k__BackingField: {fileID: 7400000, guid: 55a71f384b810ed42abaec9df2746b3d, type: 2}
+    - rid: 2907648995593551876
+      type: {class: MovementData, ns: , asm: Assembly-CSharp}
+      data:
+        name: MovementData
+        attackData:
+        - name: Attack 1
+          <Direction>k__BackingField: {x: 0, y: 0}
+          <Velocity>k__BackingField: 2
+        - name: Attack 1
+          <Direction>k__BackingField: {x: 0, y: 0}
+          <Velocity>k__BackingField: 2
