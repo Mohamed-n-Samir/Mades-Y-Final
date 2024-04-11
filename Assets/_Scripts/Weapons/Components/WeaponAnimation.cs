@@ -43,22 +43,22 @@ public class WeaponAnimation : WeaponComponent<WeaponAnimationData, AttackAnimat
             if (x == -1 && y == 0)
             {
                 WeaponAnimator.CrossFade(currentAttackData.Animations[0].name, 0, 0);
-                Debug.Log(currentAttackData.Animations[0].name);
+                // Debug.Log(currentAttackData.Animations[0].name);
             }
             else if (x == 0 && y == 1)
             {
                 WeaponAnimator.CrossFade(currentAttackData.Animations[1].name, 0, 0);
-                Debug.Log(currentAttackData.Animations[0].name);
+                // Debug.Log(currentAttackData.Animations[0].name);
             }
             else if (x == 1 && y == 0)
             {
                 WeaponAnimator.CrossFade(currentAttackData.Animations[2].name, 0, 0);
-                Debug.Log(currentAttackData.Animations[0].name);
+                // Debug.Log(currentAttackData.Animations[0].name);
             }
             else if (x == 0 && y == -1)
             {
                 WeaponAnimator.CrossFade(currentAttackData.Animations[3].name, 0, 0);
-                Debug.Log(currentAttackData.Animations[0].name);
+                // Debug.Log(currentAttackData.Animations[0].name);
             }
 
         }
@@ -69,7 +69,7 @@ public class WeaponAnimation : WeaponComponent<WeaponAnimationData, AttackAnimat
         if (isPlaying)
         {
             WeaponAnimator.CrossFade("Empty", 0, 0);
-            Debug.Log("animation stopped");
+            // Debug.Log("animation stopped");
         }
     }
 

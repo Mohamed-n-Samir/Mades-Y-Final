@@ -5,10 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GraveWood 1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GraveWood2.unity
     guid: e9ee0e487b3fab2449bf20542e374c27
+  - enabled: 1
+    path: Assets/Scenes/momen test.unity
+    guid: e82e0f4a3fd1b5549878e002033ae965
   m_configObjects: {}

@@ -25,7 +25,6 @@ public class Damage : WeaponComponent<DamageData,AttackDamage>
         hitBox.OnDetectedCollider2D += HandleDetectCollider2D;
     }
 
-
     protected override void OnDestroy()
     {
         base.OnDestroy();

@@ -82,6 +82,10 @@ public class Player : MonoBehaviour
         StateMachine.CurrentPlayerState.LateUpdate();
     }
 
+    public void Damage(int damage){
+
+    }
+
     #endregion
 
     #region Other Functions

@@ -48,18 +48,18 @@ public class WeaponSpriteLibrary : WeaponComponent<WeaponSpriteLibraryData, Atta
         // }
         // else
         // {
-        //     Debug.LogError("spriteLibrary component not found!");
+        //     // Debug.LogError("spriteLibrary component not found!");
         // }
 
         // if (spriteResolver != null)
         // {
         //     // Change the sprite category
-        //     Debug.Log(currentAttackData.SpriteLibraryAsset.GetCategoryNames().ToArray<string>()[CurrentAttackCounter]);
+        //     // Debug.Log(currentAttackData.SpriteLibraryAsset.GetCategoryNames().ToArray<string>()[CurrentAttackCounter]);
         //     spriteResolver.SetCategoryAndLabel(currentAttackData.SpriteLibraryAsset.GetCategoryNames().ToArray<string>()[CurrentAttackCounter], "0");
         // }
         // else
         // {
-        //     Debug.LogError("SpriteResolver component not found!");
+        //     // Debug.LogError("SpriteResolver component not found!");
         // }
     }
 
@@ -141,7 +141,7 @@ public class WeaponSpriteLibrary : WeaponComponent<WeaponSpriteLibraryData, Atta
             WeaponAnimator.CrossFade("Empty Body", 0);
             spriteLibrary.spriteLibraryAsset = null;
             spriteRenderer.sprite = null;
-            Debug.Log("animation stopped");
+            // Debug.Log("animation stopped");
         }
 
     }

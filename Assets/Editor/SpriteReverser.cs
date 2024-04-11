@@ -78,6 +78,6 @@ public class ReverseSpriteSheet : EditorWindow
         spriteSheet.SetPixels(newPixels);
         spriteSheet.Apply(true);
 
-        Debug.Log("Sprite sheet reversed successfully!");
+        // Debug.Log("Sprite sheet reversed successfully!");
     }
 }

@@ -60,7 +60,7 @@ MonoBehaviour:
           <HitBox>k__BackingField:
             serializedVersion: 2
             x: 0.5
-            y: 21
+            y: 0
             width: 1.5
             height: 2
         - name: Attack 2

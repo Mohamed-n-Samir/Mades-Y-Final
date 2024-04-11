@@ -11,7 +11,7 @@ public class ActionHitBox : WeaponComponent<ActionHitBoxData, AttackActionHitBox
 
     private void HandleAttackAction()
     {
-        Debug.Log(Player);
+        // Debug.Log(Player);
         PlayerDirection = new Vector2(Player.PlayerAnimator.GetFloat("Horizontal"), Player.PlayerAnimator.GetFloat("Vertical"));
         offset = CalculateOffset(PlayerDirection);
         detected = Physics2D.OverlapBoxAll(offset, currentAttackData.HitBox.size, 0f, data.DetectableLayers);
@@ -64,21 +64,14 @@ public class ActionHitBox : WeaponComponent<ActionHitBoxData, AttackActionHitBox
         float offsetX = transform.position.x + playerDirection.x * currentAttackData.HitBox.center.x;
         float offsetY = transform.position.y + playerDirection.y * currentAttackData.HitBox.center.y;
 
-        // if (playerDirection.y == 1 || playerDirection.y == -1)
-        // {
-        //     if (currentAttackData.HitBox.width > currentAttackData.HitBox.height)
-        //     {
-        //         currentAttackData.SwapRectSize();
-        //         Debug.Log(true);
-        //     }
-        // }
-        // else
-        // {
-        //     if (currentAttackData.HitBox.width < currentAttackData.HitBox.height)
-        //     {
-        //         currentAttackData.SwapRectSize();
-        //     }
-        // }
+        // Debug.Log(playerDirection.y);
+
+        if(playerDirection.y == 0){
+            offsetY = transform.position.y + currentAttackData.HitBox.center.y / 2 - 0.25f;
+        }
+        else if(playerDirection.y == -1){
+            offsetY += .3f;
+        }
 
         return new Vector3(offsetX, offsetY, transform.position.z);
     }

@@ -502,12 +502,12 @@ namespace SuperTiled2Unity.Editor
             catch (CustomImporterException cie)
             {
                 ReportError("Custom Importer error: \n  Importer: {0}\n  Message: {1}", customImporter.GetType().Name, cie.Message);
-                Debug.LogErrorFormat("Custom Importer ({0}) exception: {1}", customImporter.GetType().Name, cie.Message);
+                // Debug.LogErrorFormat("Custom Importer ({0}) exception: {1}", customImporter.GetType().Name, cie.Message);
             }
             catch (Exception e)
             {
                 ReportError("Custom importer '{0}' threw an exception. Message = '{1}', Stack:\n{2}", customImporter.GetType().Name, e.Message, e.StackTrace);
-                Debug.LogErrorFormat("Custom importer general exception: {0}", e.Message);
+                // Debug.LogErrorFormat("Custom importer general exception: {0}", e.Message);
             }
         }
     }

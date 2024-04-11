@@ -32,7 +32,7 @@ namespace SuperTiled2Unity
                 return new Color32(r, g, b, 255);
             }
 
-            Debug.LogErrorFormat("Could not convert '{0}' to a color.", htmlString);
+            // Debug.LogErrorFormat("Could not convert '{0}' to a color.", htmlString);
             return Color.magenta;
         }
 
@@ -52,7 +52,7 @@ namespace SuperTiled2Unity
             }
             catch
             {
-                Debug.LogErrorFormat("Could not convert '{0}' to enum type '{1}'.", enumString, typeof(T).Name);
+                // Debug.LogErrorFormat("Could not convert '{0}' to enum type '{1}'.", enumString, typeof(T).Name);
                 value = default(T);
             }
 
@@ -64,7 +64,7 @@ namespace SuperTiled2Unity
             float result;
             if (!float.TryParse(str, NumberStyles.Float, CultureInfo.InvariantCulture, out result))
             {
-                Debug.LogErrorFormat("Could not convert '{0}' to float.", str);
+                // Debug.LogErrorFormat("Could not convert '{0}' to float.", str);
             }
 
             return result;
@@ -75,7 +75,7 @@ namespace SuperTiled2Unity
             int result;
             if (!int.TryParse(str, NumberStyles.Integer, CultureInfo.InvariantCulture, out result))
             {
-                Debug.LogErrorFormat("Could not convert '{0}' to int.", str);
+                // Debug.LogErrorFormat("Could not convert '{0}' to int.", str);
             }
 
             return result;
@@ -92,7 +92,7 @@ namespace SuperTiled2Unity
                 return false;
             }
 
-            Debug.LogErrorFormat("Could not convert '{0}' to bool.", str);
+            // Debug.LogErrorFormat("Could not convert '{0}' to bool.", str);
             return false;
         }
     }

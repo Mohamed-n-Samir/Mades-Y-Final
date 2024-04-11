@@ -35,7 +35,7 @@ public abstract class WeaponComponent : MonoBehaviour
     protected virtual void HandleEnter()
     {
         isAttackActive = true;
-        Debug.Log("helawa");
+        // Debug.Log("helawa");
     }
 
     protected virtual void HandleExit()
@@ -65,7 +65,7 @@ public abstract class WeaponComponent<T1, T2> : WeaponComponent where T1 : Compo
     protected override void HandleEnter()
     {
         base.HandleEnter();
-        Debug.Log(data);
+        // Debug.Log(data);
 
         currentAttackData = data.AttackData[weapon.CurrentAttackCounter];
     }

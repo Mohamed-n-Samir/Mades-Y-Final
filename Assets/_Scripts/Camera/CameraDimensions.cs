@@ -14,12 +14,12 @@ public class CameraDimensions
             float cameraWidth = mainCamera.orthographicSize * 2f * mainCamera.aspect;
 
             // Print or use the dimensions as needed
-            Debug.Log("Camera Width: " + cameraWidth);
+            // // Debug.Log("Camera Width: " + cameraWidth);
             return cameraWidth;
         }
         else
         {
-            Debug.LogError("Main camera not found!");
+            // // Debug.LogError("Main camera not found!");
             return 0;
         }
     }
@@ -35,13 +35,13 @@ public class CameraDimensions
             float cameraHeight = mainCamera.orthographicSize * 2f;
 
             // Print or use the dimensions as needed
-            Debug.Log("Camera Height: " + cameraHeight);
+            // // Debug.Log("Camera Height: " + cameraHeight);
             return cameraHeight;
 
         }
         else
         {
-            Debug.LogError("Main camera not found!");
+            // // Debug.LogError("Main camera not found!");
             return 0;
 
         }

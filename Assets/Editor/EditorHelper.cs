@@ -13,11 +13,11 @@ public class EditorHelper : MonoBehaviour
         string folderPath = "ToSlice";
 
         Object[] spriteSheets = Resources.LoadAll(folderPath, typeof(Texture2D));
-        Debug.Log("spriteSheets.Length: " + spriteSheets.Length);
+        // Debug.Log("spriteSheets.Length: " + spriteSheets.Length);
 
         for (int z = 0; z < spriteSheets.Length; z++)
         {
-            Debug.Log("z: " + z + " spriteSheets[z]: " + spriteSheets[z]);
+            // Debug.Log("z: " + z + " spriteSheets[z]: " + spriteSheets[z]);
 
             string path = AssetDatabase.GetAssetPath(spriteSheets[z]);
             TextureImporter ti = AssetImporter.GetAtPath(path) as TextureImporter;
@@ -46,7 +46,7 @@ public class EditorHelper : MonoBehaviour
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
         }
 
-        Debug.Log("Done Slicing!");
+        // Debug.Log("Done Slicing!");
     }
 
     static void SetSpriteMetaData(TextureImporter textureImporter, List<SpriteMetaData> spriteMetaDataList)

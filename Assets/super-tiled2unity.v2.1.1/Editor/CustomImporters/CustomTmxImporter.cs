@@ -23,7 +23,7 @@ namespace MyNamespace
         {
             // Just log the name of the map
             var map = args.ImportedSuperMap;
-            Debug.LogFormat("Map '{0}' has been imported.", map.name);
+            // Debug.LogFormat("Map '{0}' has been imported.", map.name);
         }
     }
 
@@ -36,7 +36,7 @@ namespace MyNamespace
             // Just log the number of layers in our tiled map
             var map = args.ImportedSuperMap;
             var layers = map.GetComponentsInChildren<SuperLayer>();
-            Debug.LogFormat("Map '{0}' has {1} layers.", map.name, layers.Length);
+            // Debug.LogFormat("Map '{0}' has {1} layers.", map.name, layers.Length);
         }
     }
 
@@ -45,7 +45,7 @@ namespace MyNamespace
     {
         public override void TmxAssetImported(TmxAssetImportedArgs args)
         {
-            Debug.Log("MyOrderedTmxImporter importer");
+            // Debug.Log("MyOrderedTmxImporter importer");
         }
     }
 
@@ -54,7 +54,7 @@ namespace MyNamespace
     {
         public override void TmxAssetImported(TmxAssetImportedArgs args)
         {
-            Debug.Log("MyOrderedTmxImporter1 importer");
+            // Debug.Log("MyOrderedTmxImporter1 importer");
         }
     }
 

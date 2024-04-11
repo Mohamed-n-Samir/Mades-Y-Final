@@ -89,13 +89,13 @@ namespace SuperTiled2Unity.Editor
                 // This should be reported for bug fixing
                 m_Errors.Add("Unknown error encountered. Please report as bug. Stack track is in the console output.");
                 m_Errors.Add(ex.Message);
-                Debug.LogErrorFormat("Unknown error of type importing '{0}': {1}\nStack Trace:\n{2}", assetPath, ex.Message, ex.StackTrace);
+                // Debug.LogErrorFormat("Unknown error of type importing '{0}': {1}\nStack Trace:\n{2}", assetPath, ex.Message, ex.StackTrace);
             }
 #else
             {
                 string error = SuperTiled2Unity_Config.GetVersionError();
                 ReportError(error);
-                Debug.LogError(error);
+                // Debug.LogError(error);
             }
 #endif
         }
@@ -181,7 +181,7 @@ namespace SuperTiled2Unity.Editor
             {
                 if (!m_MissingSortingLayers.Contains(sortName))
                 {
-                    //Debug.LogWarningFormat("Sorting layer name '{0}' not found in Tag Manager. Tiled map layers and objects may be drawn out of order.", sortName);
+                    //// Debug.LogWarningFormat("Sorting layer name '{0}' not found in Tag Manager. Tiled map layers and objects may be drawn out of order.", sortName);
                     m_MissingSortingLayers.Add(sortName);
                 }
 
@@ -197,7 +197,7 @@ namespace SuperTiled2Unity.Editor
             {
                 if (!m_MissingLayers.Contains(layerName))
                 {
-                    //Debug.LogWarningFormat("Layer name '{0}' not found in Tag Manager. Colliders may not work as expected", layerName);
+                    //// Debug.LogWarningFormat("Layer name '{0}' not found in Tag Manager. Colliders may not work as expected", layerName);
                     m_MissingLayers.Add(layerName);
                 }
 

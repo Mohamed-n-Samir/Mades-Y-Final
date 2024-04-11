@@ -106,8 +106,8 @@ public class SceneSwapManager : MonoBehaviour
             {
                 _doorColl = doors[i].gameObject.GetComponent<Collider2D>();
 
-                Debug.Log(_doorColl);
-                Debug.Log(_playerColl);
+                // Debug.Log(_doorColl);
+                // Debug.Log(_playerColl);
 
                 //calculate spawn Pos
                 CalculateSpawnPosition();

@@ -9,16 +9,19 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
     {
         Player = GameObject.FindGameObjectWithTag("Player");
     }
-    
+
     public virtual void OnTriggerEnter2D(Collider2D collision)
     {
 
-
-        CanInteract = true;
-        if (CanInteract)
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("interacted");
-            Interact();
+            CanInteract = true;
+            if (CanInteract)
+            {
+                // Debug.Log("interacted");
+                Interact();
+            }
+
         }
 
     }

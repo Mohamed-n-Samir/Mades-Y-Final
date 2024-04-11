@@ -64,7 +64,7 @@ public class Weapon : MonoBehaviour
 
         AttackDirection = new Vector2(Mathf.Round(Player.PlayerAnimator.GetFloat("Horizontal")), Mathf.Round(Player.PlayerAnimator.GetFloat("Vertical")));
         
-        Debug.Log(AttackDirection);
+        // Debug.Log(AttackDirection);
         BaseAnimator.SetBool("Attack", true);
         BaseAnimator.SetFloat("Vertical", AttackDirection.y);
         BaseAnimator.SetFloat("Horizontal", AttackDirection.x);
@@ -76,7 +76,7 @@ public class Weapon : MonoBehaviour
 
     private void Exit()
     {
-        // Debug.Log(CurrentAttackCounter);
+        // // Debug.Log(CurrentAttackCounter);
         BaseAnimator.SetBool("Attack", false);
         BaseAnimator.SetFloat("Vertical", 0f);
         BaseAnimator.SetFloat("Horizontal", 0f);

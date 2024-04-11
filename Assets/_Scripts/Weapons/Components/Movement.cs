@@ -9,7 +9,7 @@ public class Movement : WeaponComponent<MovementData, AttackMovement>
     private void HandleStartMovement()
     {
         coreMovement.SetVelocity(currentAttackData.Velocity * new Vector2(Player.PlayerAnimator.GetFloat("Horizontal"), Player.PlayerAnimator.GetFloat("Vertical")));
-        Debug.Log(currentAttackData);
+        // Debug.Log(currentAttackData);
     }
 
     private void HandleStopMovement()

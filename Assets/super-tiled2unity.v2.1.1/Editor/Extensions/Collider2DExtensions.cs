@@ -9,7 +9,7 @@ namespace SuperTiled2Unity.Editor
 #if UNITY_2023_1_OR_NEWER
             if (merge && !collider2d.compositeCapable)
             {
-                Debug.LogWarning($"Super Tiled2Unity warning: Collider2D '{collider2d.name}' is not composite capable");
+                // Debug.LogWarning($"Super Tiled2Unity warning: Collider2D '{collider2d.name}' is not composite capable");
             }
             collider2d.compositeOperation = merge ? Collider2D.CompositeOperation.Merge : Collider2D.CompositeOperation.None;
 #else

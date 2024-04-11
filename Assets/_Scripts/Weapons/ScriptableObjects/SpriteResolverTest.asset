@@ -17,6 +17,8 @@ MonoBehaviour:
   <ComponentData>k__BackingField:
   - rid: 2907648995593551876
   - rid: 1477135172513038336
+  - rid: 2577275099785723904
+  - rid: 2577275189575286784
   references:
     version: 2
     RefIds:
@@ -31,6 +33,39 @@ MonoBehaviour:
         - name: Attack 1
           <SpriteLibraryAsset>k__BackingField: {fileID: 7108339969198208228, guid: 42e4d10f4cc82a046a2497de3eb15b9b, type: 3}
           <Animations>k__BackingField: {fileID: 7400000, guid: 55a71f384b810ed42abaec9df2746b3d, type: 2}
+    - rid: 2577275099785723904
+      type: {class: ActionHitBoxData, ns: , asm: Assembly-CSharp}
+      data:
+        name: ActionHitBoxData
+        attackData:
+        - name: Attack 1
+          Debug: 1
+          <HitBox>k__BackingField:
+            serializedVersion: 2
+            x: 0
+            y: 0.2
+            width: 1.6
+            height: 1.6
+        - name: Attack 2
+          Debug: 1
+          <HitBox>k__BackingField:
+            serializedVersion: 2
+            x: 0
+            y: 0.2
+            width: 1.6
+            height: 1.6
+        <DetectableLayers>k__BackingField:
+          serializedVersion: 2
+          m_Bits: 512
+    - rid: 2577275189575286784
+      type: {class: DamageData, ns: , asm: Assembly-CSharp}
+      data:
+        name: DamageData
+        attackData:
+        - name: Attack 1
+          <Amount>k__BackingField: 15
+        - name: Attack 2
+          <Amount>k__BackingField: 20
     - rid: 2907648995593551876
       type: {class: MovementData, ns: , asm: Assembly-CSharp}
       data:

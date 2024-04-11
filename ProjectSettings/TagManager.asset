@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Dialog
+  - Enemy
+  - Colliders
   layers:
   - Default
   - TransparentFX
@@ -15,8 +17,8 @@ TagManager:
   - Ground
   - Collisions
   - Player
-  - 
-  - 
+  - Damage
+  - Env
   - 
   - 
   - 
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: BelowPlayer
     uniqueID: 4031640583
+    locked: 0
+  - name: Enemy
+    uniqueID: 971609767
     locked: 0
   - name: Player
     uniqueID: 3894060289

@@ -180,7 +180,7 @@ namespace SuperTiled2Unity.Editor
                 if (!m_CurrentPacker.TryAreaFit(width, height, out x, out y))
                 {
                     // This should never happen. If the tile is too big to fit then we failed to check it before we got here.
-                    Debug.LogErrorFormat("Error: Failed to pack size ({0}, {1}) into secondary atlas. This should not have happend.", width, height);
+                    // Debug.LogErrorFormat("Error: Failed to pack size ({0}, {1}) into secondary atlas. This should not have happend.", width, height);
                     return null;
                 }
             }
