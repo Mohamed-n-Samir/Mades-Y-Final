@@ -12,7 +12,7 @@ public class SceneSwapManager : MonoBehaviour
 
     private GameObject _player;
     private Collider2D _playerColl;
-    private Collider2D _doorColl;
+    private BoxCollider2D _doorColl;
     private Vector3 _playerSpawnPosition;
     private CameraMovement cam;
 
@@ -104,7 +104,7 @@ public class SceneSwapManager : MonoBehaviour
         {
             if (doors[i].CurrentRoomPosition == doorSpawnNumber)
             {
-                _doorColl = doors[i].gameObject.GetComponent<Collider2D>();
+                _doorColl = doors[i].gameObject.GetComponent<BoxCollider2D>();
 
                 // Debug.Log(_doorColl);
                 // Debug.Log(_playerColl);
@@ -122,18 +122,40 @@ public class SceneSwapManager : MonoBehaviour
         float colliderHeight = _playerColl.bounds.extents.y;
         _playerSpawnPosition = _doorColl.transform.position - new Vector3(0f, colliderHeight, 0f);
 
-        if (_playerSpawnPosition.x < 0)
-        {
-            cam.transform.position = new Vector3(_playerSpawnPosition.x + CameraDimensions.GetCameraWidth() / 2, _playerSpawnPosition.y, cam.transform.position.z);
-            _playerSpawnPosition.x += 1;
+        Debug.Log(_doorColl.size);
 
+        if (_doorColl.size.x < _doorColl.size.y)
+        {
+            if (_playerSpawnPosition.x < 0)
+            {
+                cam.transform.position = new Vector3(_playerSpawnPosition.x + CameraDimensions.GetCameraWidth() / 2, _playerSpawnPosition.y, cam.transform.position.z);
+                _playerSpawnPosition.x += 1;
+
+            }
+            else
+            {
+                cam.transform.position = new Vector3(_playerSpawnPosition.x - CameraDimensions.GetCameraWidth() / 2, _playerSpawnPosition.y, cam.transform.position.z);
+                _playerSpawnPosition.x -= 1;
+
+            }
         }
         else
         {
-            cam.transform.position = new Vector3(_playerSpawnPosition.x - CameraDimensions.GetCameraWidth() / 2, _playerSpawnPosition.y, cam.transform.position.z);
-            _playerSpawnPosition.x -= 1;
+            if (_playerSpawnPosition.y < 0)
+            {
+                cam.transform.position = new Vector3(_playerSpawnPosition.x , _playerSpawnPosition.y + CameraDimensions.GetCameraWidth() / 2, cam.transform.position.z);
+                _playerSpawnPosition.y += 1;
 
+            }
+            else
+            {
+                cam.transform.position = new Vector3(_playerSpawnPosition.x , _playerSpawnPosition.y - CameraDimensions.GetCameraWidth() / 2, cam.transform.position.z);
+                _playerSpawnPosition.y -= 1;
+
+            }
         }
+
+
     }
 
 }

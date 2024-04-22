@@ -51,6 +51,10 @@ public class EnemyIdleState : EnemyState
     {
         enemy.EnemyIdleBaseInstance.OnEnableLogic();
     }
+    public override void OnDrawGizmos()
+    {
+    }
+
 
 
 }

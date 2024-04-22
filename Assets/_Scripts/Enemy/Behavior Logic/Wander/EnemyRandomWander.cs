@@ -10,11 +10,8 @@ public class EnemyRandomWander : EnemyWanderSOBase
     [field: SerializeField] private float RandomMovementRange = 5f;
     [field: SerializeField] private float RandomMovementSpeed = 1f;
 
-    [field: SerializeField] private float _timer = 3f;
-    [field: SerializeField] private float _exitTimer = 0f;
-
     private Vector3 _targetPos;
-    private Vector3 _direction;
+    private Vector3 _direction; 
 
 
 
@@ -40,7 +37,10 @@ public class EnemyRandomWander : EnemyWanderSOBase
         _direction = (_targetPos - enemy.transform.position).normalized;
         enemy.EnemyMove(_direction * RandomMovementSpeed);
 
-        if ((enemy.transform.position - _targetPos).sqrMagnitude < 0.01f || canSeeEnviroment(2f))
+        // Debug.Log(enemy.transform.position);
+        // Debug.Log(_targetPos);
+
+        if (Vector2.Distance(enemy.transform.position , _targetPos) < 0.1f || CanSeeEnviroment())
         {
             // _targetPos = GetRandomPointInCircle();
             enemy.StateMachine.ChangeState(enemy.IdleState);
@@ -70,16 +70,14 @@ public class EnemyRandomWander : EnemyWanderSOBase
 
     public override void OnEnableLogic()
     {
-        Debug.Log("a7a");
     }
     public override void OnDisableLogic() { }
 
-    private bool canSeeEnviroment(float distance)
+    private bool CanSeeEnviroment()
     {
-        float castDistance = distance;
 
-        Vector3 xEndPoint = enemy.transform.GetChild(1).position + Vector3.right * distance;
-        Vector3 yEndPoint = enemy.transform.GetChild(1).position + Vector3.up * distance;
+        Vector3 xEndPoint = _targetPos * 1.2f;
+        Vector3 yEndPoint = _targetPos * 1.2f;
 
         RaycastHit2D hitX = Physics2D.Linecast(enemy.transform.position, xEndPoint, 1 << LayerMask.NameToLayer("Env"));
         RaycastHit2D hitY = Physics2D.Linecast(enemy.transform.position, yEndPoint, 1 << LayerMask.NameToLayer("Env"));
@@ -100,5 +98,16 @@ public class EnemyRandomWander : EnemyWanderSOBase
         }
 
         return false;
+    }
+
+    public override void OnDrawGizmos()
+    {
+        Vector3 xEndPoint = _targetPos * 1.2f;
+        Vector3 yEndPoint = _targetPos * 1.2f;
+
+        Gizmos.color = Color.red;
+
+        Gizmos.DrawLine(enemy.transform.position, xEndPoint);
+        Gizmos.DrawLine(enemy.transform.position, yEndPoint);
     }
 }

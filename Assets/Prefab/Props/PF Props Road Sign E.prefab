@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2055102311959635374}
   - component: {fileID: 3955592045749825621}
   - component: {fileID: 5374531262271975770}
-  m_Layer: 20
+  - component: {fileID: 6951030058469242989}
+  m_Layer: 10
   m_Name: PF Props Road Sign E
-  m_TagString: Untagged
+  m_TagString: Colliders
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -400907007
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300086, guid: 29c9cded5e558164aaf8c9bf08aa1510, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -120,10 +121,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: -0.1}
+  m_Offset: {x: 0.02000001, y: -0.14944507}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.44592682, y: 0.15}
+    pivot: {x: 0.44592682, y: 0.19271278}
     oldSize: {x: 0.84375, y: 1}
     newSize: {x: 1, y: 0.96875}
     adaptiveTilingThreshold: 0.5
@@ -131,7 +132,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.78476596, y: 0.08343065}
+  m_Size: {x: 0.78476596, y: 0.27222094}
   m_EdgeRadius: 0
 --- !u!61 &3955592045749825621
 BoxCollider2D:
@@ -168,7 +169,7 @@ BoxCollider2D:
   m_Offset: {x: 0.02, y: 0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.44592682, y: 0.15}
+    pivot: {x: 0.44592682, y: 0.19271278}
     oldSize: {x: 0.84375, y: 1}
     newSize: {x: 1, y: 0.96875}
     adaptiveTilingThreshold: 0.5
@@ -193,6 +194,22 @@ MonoBehaviour:
   dialogBox: {fileID: 0}
   dialogText: {fileID: 0}
   dialog: To The Village
+--- !u!114 &6951030058469242989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055102311959635369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2055102312182832482
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2055102312182832481}
   - component: {fileID: 2055102312182832480}
-  m_Layer: 20
+  m_Layer: 10
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

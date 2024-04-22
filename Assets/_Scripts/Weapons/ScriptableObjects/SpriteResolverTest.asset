@@ -19,6 +19,7 @@ MonoBehaviour:
   - rid: 1477135172513038336
   - rid: 2577275099785723904
   - rid: 2577275189575286784
+  - rid: 2577275332524507136
   references:
     version: 2
     RefIds:
@@ -66,6 +67,15 @@ MonoBehaviour:
           <Amount>k__BackingField: 15
         - name: Attack 2
           <Amount>k__BackingField: 20
+    - rid: 2577275332524507136
+      type: {class: KnockBackData, ns: , asm: Assembly-CSharp}
+      data:
+        name: KnockBackData
+        attackData:
+        - name: Attack 1
+          <Strength>k__BackingField: 1
+        - name: Attack 2
+          <Strength>k__BackingField: 1.5
     - rid: 2907648995593551876
       type: {class: MovementData, ns: , asm: Assembly-CSharp}
       data:

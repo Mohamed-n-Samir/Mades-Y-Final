@@ -29,6 +29,7 @@ public class EnemyWanderSOBase : ScriptableObject
     public virtual void ResetValues() { }
     public virtual void OnEnableLogic() { }
     public virtual void OnDisableLogic() { }
+    public virtual void OnDrawGizmos(){}
 
 
 }

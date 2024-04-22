@@ -51,4 +51,7 @@ public class EnemyChaseState : EnemyState
     {
         enemy.EnemyChaseBaseInstance.OnEnableLogic();
     }
+        public override void OnDrawGizmos()
+    {
+    }
 }

@@ -2,20 +2,21 @@ using UnityEngine;
 
 public class BreakBase : MonoBehaviour, IBreakable
 {
-    public GameObject Player { get; set; }
-    public bool CanInteract { get; set; }
+    private Animator anim;
 
     public virtual void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-    }
-    
-    public virtual void OnTriggerEnter2D(Collider2D collision)
-    {
-            Break();
+        anim = GetComponent<Animator>();
     }
 
-    public virtual void Break()
+    public void Break()
     {
+        anim.SetBool("Break", true);
+    }
+
+    public void StopBreaking()
+    {
+        anim.SetBool("Break", false);
+        Destroy(gameObject);
     }
 }

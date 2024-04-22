@@ -22,20 +22,27 @@ public class EnemyChaseDirectToPlayer : EnemyChaseSOBase
     {
         base.DoEnterLogic();
         enemy.animator.SetBool("walking", true);
+        enemy.agent.speed = _movementSpeed;
+        enemy.agent.isStopped = false;
+        _timer = 0;
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
         enemy.animator.SetBool("walking", false);
+        enemy.agent.isStopped = true;
     }
 
     public override void DoFrameUpdateLogic()
     {
         base.DoFrameUpdateLogic();
-        Vector2 moveDirection = (playerTransform.position - enemy.transform.position).normalized;
+        // Vector2 moveDirection = (playerTransform.position - enemy.transform.position).normalized;
+        enemy.agent.SetDestination(playerTransform.position);
+        enemy.CheackLeftOrRightFacing(playerTransform.position - enemy.transform.position);
+    // new Vector2(enemy.agent.destination.x, enemy.agent.destination.y)
 
-        enemy.EnemyMove(moveDirection * _movementSpeed);
+        // enemy.EnemyMove(moveDirection * _movementSpeed);
 
         if (!enemy.IsAggroad)
         {

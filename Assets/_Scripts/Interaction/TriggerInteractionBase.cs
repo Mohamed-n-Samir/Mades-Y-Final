@@ -5,9 +5,15 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
     public GameObject Player { get; set; }
     public bool CanInteract { get; set; }
 
+    
+    [SerializeField] protected Signal contextClueOn;
+    [SerializeField] protected Signal contextClueOff;
+    // public InputManager inputHandler;
+
     public virtual void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        
     }
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
@@ -15,13 +21,7 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
 
         if (collision.CompareTag("Player"))
         {
-            CanInteract = true;
-            if (CanInteract)
-            {
-                // Debug.Log("interacted");
-                Interact();
-            }
-
+            Interact();
         }
 
     }
@@ -30,11 +30,13 @@ public class TriggerInteractionBase : MonoBehaviour, IInteractable
     {
         if (collision.CompareTag("Player"))
         {
-            CanInteract = false;
+            CancelInteract();
         }
     }
 
     public virtual void Interact()
     {
     }
+
+    public virtual void CancelInteract() { }
 }

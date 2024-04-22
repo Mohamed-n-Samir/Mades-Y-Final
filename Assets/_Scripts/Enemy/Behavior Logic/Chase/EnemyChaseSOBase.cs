@@ -24,11 +24,6 @@ public class EnemyChaseSOBase : ScriptableObject
     public virtual void DoExitLogic() { ResetValues(); }
     public virtual void DoFrameUpdateLogic()
     {
-
-        if (enemy.IsWithinStrikingDistance)
-        {
-            enemy.StateMachine.ChangeState(enemy.AttackState);
-        }
     }
     public virtual void DoPhysicsLogic() { }
     public virtual void DoAnimationTriggerEventLogic(Enemy.AnimationTriggerType triggerType) { }

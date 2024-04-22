@@ -54,4 +54,7 @@ public class EnemyAttackState : EnemyState
         Debug.Log("3wtf");
         enemy.EnemyAttackBaseInstance.OnDisableLogic();
     }
+    public override void OnDrawGizmos()
+    {
+    }
 }

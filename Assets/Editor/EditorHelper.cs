@@ -7,17 +7,17 @@ public class EditorHelper : MonoBehaviour
     [MenuItem("EditorHelper/SliceSprites")]
     static void SliceSprites()
     {
-        int sliceWidth = 32;
-        int sliceHeight = 32;
+        int sliceWidth = 256;
+        int sliceHeight = 256;
 
         string folderPath = "ToSlice";
 
         Object[] spriteSheets = Resources.LoadAll(folderPath, typeof(Texture2D));
-        // Debug.Log("spriteSheets.Length: " + spriteSheets.Length);
+        Debug.Log("spriteSheets.Length: " + spriteSheets.Length);
 
         for (int z = 0; z < spriteSheets.Length; z++)
         {
-            // Debug.Log("z: " + z + " spriteSheets[z]: " + spriteSheets[z]);
+            Debug.Log("z: " + z + " spriteSheets[z]: " + spriteSheets[z]);
 
             string path = AssetDatabase.GetAssetPath(spriteSheets[z]);
             TextureImporter ti = AssetImporter.GetAtPath(path) as TextureImporter;
@@ -33,10 +33,10 @@ public class EditorHelper : MonoBehaviour
                 for (int j = spriteSheet.height; j > 0; j -= sliceHeight)
                 {
                     SpriteMetaData smd = new SpriteMetaData();
-                    smd.pivot = new Vector2(0.5f, 0.5f);
-                    smd.alignment = (int)SpriteAlignment.Center;
                     smd.name = (spriteSheet.height - j) / sliceHeight + ", " + i / sliceWidth;
                     smd.rect = new Rect(i, j - sliceHeight, sliceWidth, sliceHeight);
+                    smd.alignment = (int)SpriteAlignment.Custom;
+                    smd.pivot = new Vector2(0.5f, 0.35f);
 
                     newData.Add(smd);
                 }
@@ -46,7 +46,7 @@ public class EditorHelper : MonoBehaviour
             AssetDatabase.ImportAsset(path, ImportAssetOptions.ForceUpdate);
         }
 
-        // Debug.Log("Done Slicing!");
+        Debug.Log("Done Slicing!");
     }
 
     static void SetSpriteMetaData(TextureImporter textureImporter, List<SpriteMetaData> spriteMetaDataList)

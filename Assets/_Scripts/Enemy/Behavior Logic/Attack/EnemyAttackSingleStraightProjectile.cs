@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Attack-Straight-Single Projectile", menuName = "Enemy Logic/Attack Logic/Straight Single Projectile")]
@@ -14,6 +10,7 @@ public class EnemyAttackSingleStraightProjectile : EnemyAttackSOBase
     [SerializeField] private float _distanceToCountExit = 1f;
     [SerializeField] private float _projectileSpeed = 10f;
     private Vector2 dir;
+    private Vector3 throughPoint;
 
     private float _timer;
     private float _exitTimer;
@@ -23,19 +20,20 @@ public class EnemyAttackSingleStraightProjectile : EnemyAttackSOBase
     {
         base.DoEnterLogic();
         _exitTimer = _timeTillExit;
+        enemy.EnemyMove(Vector2.zero);
     }
 
     public override void DoExitLogic()
     {
         base.DoExitLogic();
         enemy.animator.SetBool("swordThrough", false);
+        enemy.EnemyMove(Vector2.zero);
+
     }
 
     public override void DoFrameUpdateLogic()
     {
         base.DoFrameUpdateLogic();
-
-        enemy.EnemyMove(Vector2.zero);
 
         if (enemy.transform.position.x > playerTransform.position.x)
         {
@@ -52,12 +50,9 @@ public class EnemyAttackSingleStraightProjectile : EnemyAttackSOBase
         {
             enemy.animator.SetBool("swordThrough", true);
             _timer = 0f;
-
-            dir = (playerTransform.position - enemy.transform.position).normalized;
-
         }
 
-        if (Vector2.Distance(playerTransform.position, enemy.transform.position) > _distanceToCountExit + 7)
+        if (Vector2.Distance(playerTransform.position, enemy.transform.position) > _distanceToCountExit)
         {
             _exitTimer += Time.deltaTime;
             if (_exitTimer > _timeTillExit)
@@ -90,8 +85,8 @@ public class EnemyAttackSingleStraightProjectile : EnemyAttackSOBase
 
     private void ThroughProjectile()
     {
-        // Debug.Log("test");
-        Vector3 throughPoint = enemy.transform.GetChild(1).position;
+        throughPoint = enemy.transform.GetChild(1).position;
+        dir = (playerTransform.position - throughPoint).normalized;
         Rigidbody2D projectile = GameObject.Instantiate(projectilePrefab, throughPoint, Quaternion.identity);
         projectile.velocity = dir * _projectileSpeed;
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Attack-Straight-Single Projectile
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 2903117011869494821, guid: 9c5cb327e853618439be1db6d27b56ef, type: 3}
-  _timeBetweenShots: 1.5
+  _timeBetweenShots: 1.2
   _timeTillExit: 2
-  _distanceToCountExit: 3
-  _projectileSpeed: 10
+  _distanceToCountExit: 7
+  _projectileSpeed: 12

@@ -26,6 +26,8 @@ public class EnemyDamagedSOBase : ScriptableObject
     {
     }
     public virtual void DoPhysicsLogic() { }
+    public virtual void OnDisableLogic(){ }
+    public virtual void OnEnableLogic(){ }
     public virtual void DoAnimationTriggerEventLogic(Enemy.AnimationTriggerType triggerType) { }
     public virtual void ResetValues() { }
 

@@ -291,13 +291,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_8
+      name: chast1
       rect:
         serializedVersion: 2
         x: 149
-        y: 304
+        y: 302
         width: 22
-        height: 16
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,13 +312,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_9
+      name: chast4
       rect:
         serializedVersion: 2
-        x: 182
-        y: 304
-        width: 21
-        height: 15
+        x: 181
+        y: 302
+        width: 22
+        height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -585,15 +585,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_22
+      name: chast2
       rect:
         serializedVersion: 2
         x: 197
         y: 279
         width: 22
         height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49336103, y: 0.39046562}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -606,15 +606,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_23
+      name: chast3
       rect:
         serializedVersion: 2
         x: 229
         y: 279
         width: 22
         height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5033188, y: 0.39046562}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1593,13 +1593,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: objects_70
+      name: particel
       rect:
         serializedVersion: 2
-        x: 77
+        x: 76
         y: 236
-        width: 7
-        height: 8
+        width: 9
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1832,7 +1832,7 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1853,7 +1853,7 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1874,7 +1874,7 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2840,7 +2840,7 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2861,7 +2861,7 @@ TextureImporter:
         width: 25
         height: 25
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2884,6 +2884,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      chast1: -418199030
+      chast2: -1534353856
+      chast3: 51695993
+      chast4: -1711416488
       objects_0: -2060139912
       objects_1: -77439847
       objects_10: -1326515532
@@ -2944,8 +2948,6 @@ TextureImporter:
       objects_2: -1155124664
       objects_20: 1415354535
       objects_21: -1173390823
-      objects_22: -1534353856
-      objects_23: 51695993
       objects_24: 708896824
       objects_25: 1556248803
       objects_26: -1979811172
@@ -2997,7 +2999,6 @@ TextureImporter:
       objects_68: -714797801
       objects_69: -1387496659
       objects_7: 1255430453
-      objects_70: -633345608
       objects_71: 449596564
       objects_72: -712072687
       objects_73: -2047606182
@@ -3007,7 +3008,6 @@ TextureImporter:
       objects_77: 814676566
       objects_78: 118754298
       objects_79: -1674519707
-      objects_8: -418199030
       objects_80: 835476628
       objects_84: -1565688553
       objects_85: 230633269
@@ -3015,7 +3015,6 @@ TextureImporter:
       objects_87: -281455192
       objects_88: 1401848106
       objects_89: -600661760
-      objects_9: -1711416488
       objects_90: -1718608732
       objects_91: 828304595
       objects_92: 2110220200
@@ -3026,6 +3025,7 @@ TextureImporter:
       objects_97: -1536262513
       objects_98: 271970219
       objects_99: -477257878
+      particel: -633345608
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Damage : WeaponComponent<DamageData,AttackDamage>
@@ -8,6 +9,9 @@ public class Damage : WeaponComponent<DamageData,AttackDamage>
         foreach(var item in colliders){
             if(item.TryGetComponent(out IDamageable damageable)){
                 damageable.Damage(currentAttackData.Amount);
+            }
+            else if(item.TryGetComponent(out IBreakable breakable)){
+                breakable.Break();
             }
         }
     }

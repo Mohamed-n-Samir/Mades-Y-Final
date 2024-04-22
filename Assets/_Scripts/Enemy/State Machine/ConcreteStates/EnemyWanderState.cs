@@ -42,4 +42,8 @@ public class EnemyWanderState : EnemyState
         enemy.EnemyWanderBaseInstance.OnEnableLogic();
     }
 
+    public override void OnDrawGizmos(){
+        enemy.EnemyWanderBaseInstance.OnDrawGizmos();
+    }
+
 }

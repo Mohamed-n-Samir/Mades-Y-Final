@@ -17,14 +17,22 @@ public class EnemyState
     public virtual void ExitState() { }
     public virtual void FrameUpdate()
     {
-        Debug.Log(enemy.StateMachine.CurrentEnemyState);
-        if (enemy.IsAggroad && !enemy.IsWithinStrikingDistance)
+        if (!enemy.isTakingDamage)
         {
-            enemy.StateMachine.ChangeState(enemy.ChaseState);
+            if (enemy.IsAggroad && !enemy.IsWithinStrikingDistance)
+            {
+                enemy.StateMachine.ChangeState(enemy.ChaseState);
+            }
+            else if (enemy.IsWithinStrikingDistance)
+            {
+                enemy.StateMachine.ChangeState(enemy.AttackState);
+            }
         }
+
     }
     public virtual void PhysicsUpdate() { }
     public virtual void OnEnable() { }
     public virtual void OnDisable() { }
+    public virtual void OnDrawGizmos() { }
     public virtual void AnimationTriggerEvent(Enemy.AnimationTriggerType triggerType) { }
 }

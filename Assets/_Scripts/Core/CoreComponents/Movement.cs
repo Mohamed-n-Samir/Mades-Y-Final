@@ -4,6 +4,7 @@ namespace CoreSystem
 {
 public class Movement : CoreComponent
 {
+    // public InputManager InputHandler {get; private set;}
     public Rigidbody2D RB { get; private set; }
     public Vector2 CurrentVelocity { get; private set; }
     public Vector2 NewVelocity { get; private set; }
@@ -17,6 +18,7 @@ public class Movement : CoreComponent
         base.Awake();
 
         RB = GetComponentInParent<Rigidbody2D>();
+        // InputHandler = transform.parent.GetComponentInParent<InputManager>();
 
         FacingDirection = new Vector2(0,-1);
         CanSetVelocity = true;
@@ -25,6 +27,7 @@ public class Movement : CoreComponent
     public override void LogicUpdate()
     {
         CurrentVelocity = RB.velocity;
+        FacingDirection = CurrentVelocity.normalized;
     }
 
     #region Set Functions
